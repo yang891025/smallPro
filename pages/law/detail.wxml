@@ -1,0 +1,93 @@
+<!--pages/law/detail.wxml-->
+<view class="page">
+<view class="page-text">法规云检索</view>
+  <view class="track-bg">
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14" color="blue"></icon>
+          <input type="text" class="weui-search-bar__input" bindinput="inputTyping" placeholder="请输入关键字" value="{{inputVal}}" focus="{{inputShowed}}" bindconfirm="track" />
+          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+            <icon type="clear" size="14"></icon>
+          </view>
+        </view>
+        <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+          <icon class="weui-icon-search" type="search" size="14" color="blue"></icon>
+          <view class="weui-search-bar__text">搜索</view>
+        </label>
+      </view>
+      <view class="weui-search-bar__cancel-btn" bindtap="searchData">搜索</view>
+    </view>
+    <!-- <view class="track-input-block">
+      <icon type="search" size="15" color="purple" />
+      <input class="track-input" bindinput="inputTyping" placeholder="请输入关键字" bindconfirm="track" />
+      <view class="weui-search-bar__text" bindtap="searchData">搜索</view>
+    </view> -->
+    <view style='padding-bottom: 10px;'>
+      <view style='height:12px'></view>
+      <checkbox-group class="checkbox-group" bindchange="radio1change">
+        <label class="radio">
+          <!-- <checkbox value="{{item.name}}" checked="{{item.checked}}" />{{item.value}} -->
+          <!-- <radio style="padding-right:30px;" value='1'> 标题或全文</radio> -->
+          <checkbox style="padding-right:30px;" value='2'> 标题</checkbox>
+          <checkbox checked='true' value='3'> 全文</checkbox>
+        </label>
+      </checkbox-group>
+      <view style='margin: 5px auto; width: 70%; border-bottom: 1px dashed #333;'></view>
+      <radio-group class="radio-group" bindchange="radio2change">
+        <label class="radio">
+          <!-- <checkbox value="{{item.name}}" checked="{{item.checked}}" />{{item.value}} -->
+          <radio style="padding-right:30px;" value='0' checked='true'> 精确查询</radio>
+          <radio value='1'> 模糊查询</radio>
+        </label>
+      </radio-group>
+      <view style='margin: 5px auto; width: 75%; border-bottom:1px dashed #333;'></view>
+      <checkbox-group class='checkbox-group' bindchange="checkchange">
+        <label>
+          <checkbox style="padding-right:30px;" checked='true' value='1,2,3,4'>
+            法律法规司法解释
+          </checkbox>
+          <checkbox value='52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82'>
+            地方性法规规章
+          </checkbox>
+          <checkbox style="padding-right:30px;" value='gal,al'>
+            公报案例裁判文书
+          </checkbox>
+          <checkbox value='self,en,dafu,xg,am,tw,wto,ht,bj,df,8,xd,ty,wg,9,fgcs'>
+            其他相关的资料</checkbox>
+        </label>
+      </checkbox-group>
+    </view>
+  </view>
+  <!-- <view class="page">
+    <view class="profile_nav">
+      <view class="weui-toptips weui-flex">
+        <view class="weui-flex__item">更多了解，一步到位</view>
+        <view class="r15" style="padding-top:3px;" bindtap="hiddenTips">
+        </view>
+      </view>
+      <navigator url="law" class="weui-cell">
+        <view class="weui-flex weui-cell__ft_in-access">
+          <image class="kind-list__img" src="../../images/icon_nav_tbs.png"></image>
+          <view class="weui-flex__item" style="flex-direction:column;">
+            <view class="page__desc">法规大纲</view>
+          </view>
+        </view>
+      </navigator>
+      <navigator url="/pages/outurl/website1" class="weui-cell">
+        <view class="weui-flex weui-cell__ft_in-access">
+          <image class="kind-list__img" src="../../images/icon_nav_tbsonline.png"></image>
+          <view class="weui-flex__item" style="flex-direction:column;">
+            <view class="page__desc">党内法规</view>
+          </view>
+        </view>
+      </navigator>
+    </view> 
+  </view>-->
+   <view class="weui-footer weui-footer_fixed-bottom">
+            <view class="weui-footer__links">
+                <navigator url="" class="weui-footer__link">京ICP备15047523号</navigator>
+            </view>
+            <view class="weui-footer__text">Copyright © 1994-2018 北京金信桥信息技术有限公司</view>
+        </view>
+</view>

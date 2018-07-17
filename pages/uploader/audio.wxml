@@ -1,0 +1,48 @@
+<!--pages/uploader/audio.wxml-->
+<view class="photo-add">
+  <view class="select-album" wx:if="{{albums.length > 0}}">
+    <view class="title">请选择一个路径</view>
+    <customerPicker dataList="{{albums}}" dataValue="{{albumIndex}}" columns="2" textLength="18" bind:pickConfrim="pickConfrim">
+    </customerPicker>
+  </view>
+
+  <scroll-view style='margin-bottom:60px'>
+    <checkbox-group class="checkbox-group" bindchange="radio1change">
+      <view wx:if="{{voices}}" class="weui-cells" style='padding-top:20rpx;padding-bottom:20rpx'>
+        <block wx:for="{{voices}}" wx:key="*this">
+          <view class="readingItem-content" data-index="{{index}}" catchlongpress="longTap">
+            <view class="item-index">{{item.createTime}}</view>
+            <!-- 底部 控制区域 -->
+            <view class="read-audio-control">
+              <text class="date">音频大小:{{item.size}}KB</text>
+              <image class="audio-listen" src="../../images/btn_read_listenS.png" bindtap="gotoPlay" data-key="{{item}}"></image>
+              <checkbox style='padding-left:30px' checked='{{item.checked}}' value='{{item.filePath}}'>
+              </checkbox>
+
+            </view>
+            <!-- <view class="date">{{item.filePath}}</view> -->
+            <!-- <view class="cell-bd" data-key="{{item.filePath}}" bindtap="gotoPlay">
+              <view class="date">存储路径:{{item.filePath}}</view>
+              <view class="date">存储时间:{{item.createTime}}</view>
+              <view class="date">音频大小:{{item.size}}KB</view>
+            </view> -->
+          </view>
+        </block>
+      </view>
+    </checkbox-group>
+  </scroll-view>
+  <view wx:if="{{isSpeaking}}" class="speak-style">
+    <image wx:if="{{j==0}}" class="sound-style" src="../../images/voice_icon_speech_sound_1.png"></image>
+    <image wx:if="{{j==1}}" class="sound-style" src="../../images/voice_icon_speech_sound_1.png"></image>
+    <image wx:if="{{j==2}}" class="sound-style" src="../../images/voice_icon_speech_sound_2.png"></image>
+    <image wx:if="{{j==3}}" class="sound-style" src="../../images/voice_icon_speech_sound_3.png"></image>
+    <image wx:if="{{j==4}}" class="sound-style" src="../../images/voice_icon_speech_sound_4.png"></image>
+    <image wx:if="{{j==5}}" class="sound-style" src="../../images/voice_icon_speech_sound_5.png"></image>
+  </view>
+  <view class="record-style" wx:if="{{!uploadfile}}">
+    <button class="btn-style" type="primary" bindtouchstart="touchdown" bindtouchend="touchup">按住 录音</button>
+  </view>
+  <view class="record-style" wx:if="{{uploadfile}}">
+    <button class="btn-style" type="primary" bindtap="upload">上传录音</button>
+  </view>
+</view>

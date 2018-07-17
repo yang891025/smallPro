@@ -1,0 +1,76 @@
+<!--pages/law/list.wxml-->
+
+<view class="page">
+  <view class="tr_c" style='margin-top: 42px;'>(命中
+    <view style="text-decoration:underline">{{allCount}}</view>
+    篇)
+  </view>
+  <view class="table">
+    <view class="tr_c bg-w">
+      <view class="th">序号</view>
+      <view class="th_c ">标题</view>
+    </view>
+    <scroll-view class='tbody_scroll'>
+      <block wx:for="{{kindlist}}" wx:key="unique">
+        <view bindtap='showLaw' class="tr bg-g" data-src="{{item.url}}" wx:if="{{index % 2 == 0}}">
+          <view class="td">{{index+1}}</view>
+          <view class="td_c">
+            <view class="weui-media-box weui-media-box_text">
+              <view class="weui-media-box__desc">{{item.name}}</view>
+              <view class="weui-media-box__info">
+                <view class="weui-media-box__info__meta">{{item.issueddept}}</view>
+                <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{item.effectivedate+"实施"}}</view>
+                <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{item.status}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view bindtap='showLaw' class="tr" data-src="{{item.url}}" wx:else>
+          <view class="td">{{index+1}}</view>
+          <view class="td_c">
+            <view class="weui-media-box weui-media-box_text">
+              <view class="weui-media-box__desc">{{item.name}}</view>
+              <view class="weui-media-box__info">
+                <view class="weui-media-box__info__meta">{{item.issueddept}}</view>
+                <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{item.effectivedate+"实施"}}</view>
+                <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{item.status}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+
+  <view class="page__bd" style='background:#fafafa;width: 100%;top:0;position: fixed'>
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+          <input type="text" class="weui-search-bar__input" bindtap="showInput"  bindinput="inputTyping" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindconfirm="track" />
+          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+            <icon type="clear" size="14"></icon>
+          </view>
+        </view>
+        <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+          <icon class="weui-icon-search" type="search" size="14"></icon>
+          <view class="weui-search-bar__text">搜索</view>
+        </label>
+      </view>
+      <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="searchData">搜索</view>
+      <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+    </view>
+    <view style='margin: 10px;' wx:if="{{inputShowed2}}">
+      <view class="weui-cell__bd">
+        <checkbox-group class="checkbox-group" bindchange="radio1change">
+          <label class="radio" style='margin: 0 auto; '>
+            <!-- <checkbox checked='{{condition == "1"}}' style="padding-right:30px;" value='1'> 标题或全文</checkbox> -->
+            <checkbox checked='{{condition == "1"||condition == "2"}}' style="padding-right:30px;" value='2'> 标题</checkbox>
+            <checkbox checked='{{condition == "1"||condition == "3"}}' value='3'> 全文</checkbox>
+          </label>
+        </checkbox-group>
+        <!-- <view style='margin: 5px auto; width: 70%; border-bottom: 1px dashed #333;'></view> -->
+      </view>
+    </view>
+  </view>
+</view>

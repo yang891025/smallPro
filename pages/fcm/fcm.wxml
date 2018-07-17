@@ -1,0 +1,16 @@
+<!--pages/fcm/fcm.wxml-->
+
+<view class="home-wrap">
+
+  <view class="workbench" wx:for="{{product}}" wx:key="unique" style='margin-top:10px'>
+    <text class="title">{{item.resname}}</text>
+    <view class="list">
+      <view class="items" wx:for="{{item.product_list}}" wx:key="unique" wx:for-item="cell" wx:for-index="cellindex">
+        <view  data-index="{{[index,cellindex]}}" data-resdis="{{cell.resdis}}" data-resid="{{cell.resid}}" data-path="{{cell.dirBasePath}}" bindtap='openUrl'>
+          <image src="../../images/{{cell.image}}"></image>
+          <text>{{cell.resdis}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "customerPicker": "../../components/picker/picker"
+  },
+  "navigationBarTitleText": "图片上传"
+}

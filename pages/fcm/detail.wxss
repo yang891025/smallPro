@@ -1,0 +1,76 @@
+/* pages/fcm/detail.wxss */
+
+/*readingItem-content*/
+
+.readingItem-content {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 20rpx;
+  padding: 10rpx 30rpx 40rpx 30rpx;
+  border: 1rpx solid #d9d9d9;
+}
+
+/* read-audio-info */
+
+.read-audio-info {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 28rpx;
+}
+
+/**只显示一行*/
+
+.item-index {
+  margin-bottom: 16rpx;
+  font-size: 32rpx;
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+ text-align: center;
+  align-items: center;
+}
+
+.read-audio-progress {
+  margin-top: 1em;
+  width: 340rpx;
+}
+
+.date {
+  width: 340rpx;
+  font-size: 30rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/*read-audio-control*/
+
+.read-audio-control {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  height: 70rpx;
+}
+
+.read-audio-duration {
+  margin-left: 20rpx;
+  font-size: 32rpx;
+}
+
+.audio-listen {
+  width: 70rpx;
+  height: 70rpx;
+  margin-left: 30rpx;
+}
+
+.photo-add .video-box {
+  margin-top: 1em;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+}

@@ -1,0 +1,61 @@
+<!--pages/fcm/fileList.wxml-->
+<view class="page">
+  <view class="page__bd" style='margin-bottom:65px;margin-top: 2.3em'>
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__bd" wx:if="{{fileList.length > 0}}">
+        <view class="weui-media-box weui-media-box_appmsg " hover-class="weui-cell_active" wx:for="{{fileList}}" wx:key="unique" data-info="{{item}}" data-name="{{item.fileName}}" data-isdir="{{item.isDirectory}}" bindtap='showDir'>
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style="width: 30px;height: 30px;" wx:if="{{item.isDirectory == 0}}">
+            <image class="weui-media-box__thumb" src="../../images/file.png" />
+          </view>
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style="width: 30px;height: 30px;" wx:else>
+            <image class="weui-media-box__thumb" src="../../images/dir.png" />
+          </view>
+          <view class="wweui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__desc" style='magrn-right:60rpx'>{{item.fileName}}</view>
+            <view class="weui-media-box__info">
+              <view class="weui-media-box__info__meta">{{item.fileSize}}</view>
+              <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{item.lastUpdate}}</view>
+            </view>
+          </view>
+          <image class="kind-list__img" data-info="{{item}}" catchtap='do' src="../../images/menu2.png"></image>
+        </view>
+      </view>
+      <view class="scroll-txt" wx:else>
+        <text class="scroll-ads">文件列表为空</text>
+      </view>
+    </view>
+  </view>
+  <view class="record-top-style">
+    <view class="page__bd page__bd_spacing" >
+      <view class="weui-flex">
+        <view class="weui-flex__item" catchtap='newFile'>
+          <view class="placeholder" >新建</view>
+        </view>
+        <view class="weui-flex__item" catchtap='order'>
+          <view class="placeholder">排序</view>
+        </view>
+        <view class="weui-flex__item" catchtap='refresh'>
+          <view class="placeholder">刷新</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="record-style">
+    <button class="btn-style" type="primary" bindtap="open">上传文件</button>
+  </view>
+</view>
+
+<!--弹窗-->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title">{{title}}</view>
+  <view class="modal-content">
+    <view class="modal-input">
+      <input placeholder-class="input-holder" type="text" bindinput="inputChange" class="input" placeholder="请输入新名字" value='{{reName}}'></input>
+    </view>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="{{conformBtn}}" data-status="confirm">确定</view>
+  </view>
+</view>

@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__bd">
+        <view bindtap='showapp' wx:for="{{applist}}" wx:key="unique" data-id='{{item.appName}}' data-text='{{item.category}}' data-path='{{item.smallRoutinePath}}' data-flag='{{item.isSmallRoutine}}' class="weui-media-box weui-media-box_appmsg " hover-class="weui-cell_active">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="{{item.image}}" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">{{item.appName}}</view>
+            <view class="weui-media-box__desc">{{item.appInfo}}</view>
+            <view class="weui-media-box__info" wx:if="{{item.isSmallRoutine == 1}}">
+              <view class="weui-media-box__info__meta">版本：{{item.packVerson}}</view>
+              <view class="weui-media-box__info__meta weui-media-box__info__meta_extra" style='color: #d24a58;'>免费</view>
+            </view>
+              <view class="weui-media-box__info" wx:else>
+              <view class="weui-media-box__info__meta">版本：{{item.packVerson}}</view>
+              <view class="weui-media-box__info__meta weui-media-box__info__meta_extra" style='color: #d24a58;' wx:if="{{item.isfree != 1}}">{{item.price}} 元</view>
+              <view class="weui-media-box__info__meta weui-media-box__info__meta_extra" style='color: #d24a58;' wx:else>免费</view>
+            </view>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,59 @@
+<!--pages/detail/detail.wxml-->
+<!--text>pages/detail/detail.wxml</text-->
+<view class="content">
+  <view style="height: 30px;line-height: 30px;border-left: 5px solid #0B6AFF;background-color: #D8E3F7;font-size: 16px;padding-left: 10px;margin-top: 5px;">应用信息</view>
+  <view class="item" wx:for="{{appdetail}}" wx:key="unique">
+    <view class="ul">
+      <image src="{{item.image}}" style="width:72px;height:72px;float:left;display:block"></image>
+      <view style="float:left;display:block;padding-left:10px">{{item.appCName}}</view>
+      <view style="float:right;">
+
+        <view catchtap="checkPay" data-price="{{item.price}}" data-text="appCode={{item.appCode}}&count={{item.numStr}}" data-src="{{item.tbkPath}}" style="display: block;color:#fff;background:#0099cc;padding:2px 7px;border-radius:5px;border:1 solid #ccc;" wx:if="{{item.isfree != 1}}">购买应用</view>
+        <view catchtap="down_file" data-src="{{item.tbkPath}}" style="display: block;color:#fff;background:#0099cc;padding:2px 7px;border-radius:5px;border:1 solid #ccc;" wx:else>下载应用</view>
+        <view catchtap="official_website" data-src="{{item.officialWeb}}" style="display: block;color:#fff;background:#0099cc;padding:2px 7px;border-radius:5px;border:1 solid #ccc;margin-top:10px" wx:if="{{item.officialWeb != ''}}">打开应用</view>
+        <view style="height:100%;width:100%;display:block;padding:0px 10px" id="qcbtn"></view>
+      </view>
+    </view>
+    <view style="clear:both"></view>
+    <view class='ul'>
+      <view class="tag">
+        <view class="tag_name" style="width:65px">应用类别:</view>
+        <view class="tag_dom">{{item.category}}</view>
+      </view>
+      <view class="tag">
+        <view class="tag_name" style="width:65px">发布日期:</view>
+        <view class="tag_dom">{{item.appTime}}</view>
+      </view>
+      <view class="tag">
+        <view class="tag_name" style="width:65px">软件大小:</view>
+        <view class="tag_dom">{{item.appSize}}</view>
+      </view>
+      <view class="tag">
+        <view class="tag_name" style="width:65px">软件包:</view>
+        <view class="tag_dom">{{item.packPath}}</view>
+      </view>
+      <view class="tag">
+        <view class="tag_name" style="width:65px">包路径:</view>
+        <view class="tag_dom">{{item.appName}}</view>
+      </view>
+      <view class="tag">
+        <view class="tag_name" style="width:65px">当前版本:</view>
+        <view class="tag_dom">{{item.packVerson}}</view>
+      </view>
+      <view class="tag">
+        <view class="tag_name" style="width:65px">应用代号:</view>
+        <view class="tag_dom">{{item.appCode}}</view>
+      </view>
+      <view class="tag">
+        <view class="tag_name" style="width:65px">单价:</view>
+        <view class="tag_dom" wx:if="{{item.isfree != 1}}">{{item.price}} 元</view>
+        <view class="tag_dom" wx:else>免费</view>
+      </view>
+      <view style="height: 30px;line-height: 30px;border-left: 5px solid #0B6AFF;background-color: #D8E3F7;font-size: 16px;padding-left: 10px;margin-top: 5px;">应用详情
+      </view>
+      <view class="info">
+        {{item.appInfo}}
+      </view>
+    </view>
+  </view>
+</view>

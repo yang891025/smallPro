@@ -1,0 +1,166 @@
+<!--pages/nindex/index.wxml-->
+<view class="home-wrap">
+  <swiper indicator-dots="true" autoplay="true" interval="5000" duration="1200">
+    <view wx:for="{{banner}}" wx:key="unique">
+      <swiper-item class="banner">
+        <view style='position: relative;' data-url="{{item.url}}" bindtap='openUrl'>
+          <!-- <navigator url="{{item.target}}"> -->
+
+          <image mode="aspectFit" style="width: 100%; height: 150px;" src="{{item.image}}"></image>
+          <text>{{item.title}}</text>
+        </view>
+      </swiper-item>
+    </view>
+  </swiper>
+  <view class="scroll-txt" data-url="https://e.tbs.com.cn/website/TbsWeb/web/pro2/index.cbs" bindtap='openUrl'>
+    <text class="scroll-ads">{{txtAds}}</text>
+  </view>
+  <!-- <view class="ads-list">
+    <view class="ads-item" wx:for="{{advertise}}" wx:key="unique" wx:for-item="item">
+      <image src="{{item.image}}" mode="scaleToFill center" class="sub-banner"></image>
+    </view>
+  </view> -->
+  <view class="workbench" wx:for="{{product}}" wx:key="unique">
+    <text class="title">{{item.resname}}</text>
+    <view class="list">
+      <view class="items" wx:for="{{item.product_list}}" wx:key="unique" wx:for-item="cell">
+        <view  data-small="{{cell.isSmall}}" data-url="{{cell.url}}" bindtap='openUrl' wx:if="{{cell.isShow == '1'}}">
+          <image src="{{cell.image}}"></image>
+          <text>{{cell.title}}</text>
+        </view>
+        <view  bindtap="tbsstore" wx:else>
+          <view class="weui-cell" style="padding:0;justify-content: center;">
+            <view class="weui-cell__hd" style="position: relative">
+              <image src="{{cell.image}}"/>
+              <view class="weui-badge" style="position: absolute;top: -.4em;right: -.4em;">开发中</view>
+            </view>
+          </view>
+          <text>{{cell.title}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- <view class="workbench">
+    <text class="title">新闻资讯</text>
+    <view class="list">
+      <view class="items" data-url="https://e.tbs.com.cn/news/Web/tbsnews/page/Listnrfl_sch.cbs?resname=mrxw" bindtap='openUrl'>
+        <image src="../../images/lyig.png"></image>
+        <text>林业新闻</text>
+      </view>
+      <view class="items" data-url=" https://e.tbs.com.cn/news/Web/tbsnews/page/Listnrfl_sch.cbs?flagdiv=1&resname=yqxx" bindtap='openUrl'>
+        <image src="../../images/news.png"></image>
+        <text>水利热点</text>
+      </view>
+    </view>
+  </view>
+  <view class="workbench">
+    <text class="title">法律法规</text>
+    <view class="list">
+      <view class="items" bindtap="lawsearch">
+        <image src="../../images/fgjs.png"></image>
+        <text>法规检索</text>
+      </view>
+      <view class="items" bindtap="lawall">
+        <image src="../../images/fgdg.png"></image>
+        <text>法规大纲</text>
+      </view>
+      <view class="items" data-url="https://e.tbs.com.cn/hbfg/law/page/tmflframe.cbs?rid=1" bindtap='openUrl'>
+        <image src="../../images/hbfg.png"></image>
+        <text>环保法规</text>
+      </view>
+      <view class="items" data-url="https://e.tbs.com.cn/aqsc/law/lawm/tmflframe.cbs?rid=1" bindtap='openUrl'>
+        <image src="../../images/icon_nav_tbs.png"></image>
+        <text>安全生产法规</text>
+      </view>
+      <view class="items" data-url="https://e.tbs.com.cn/news/Web/tbsnews/page/Listnrfl.cbs?resname=lyfl" bindtap='openUrl'>
+        <image src="../../images/lyfl.png"></image>
+        <text>林业法规</text>
+      </view>
+    </view>
+  </view>
+  <view class="workbench">
+    <text class="title">标准专利</text>
+    <view class="list">
+      <view class="items" data-url="https://e.tbs.com.cn/news/Web/tbsnews/page/Listnrfl.cbs?resname=lybz" bindtap='openUrl'>
+        <image src="../../images/lybz.png"></image>
+        <text>林业标准</text>
+      </view>
+      <view class="items" data-url="https://e.tbs.com.cn/gdbz/web/home.cbs" bindtap='openUrl'>
+        <image src="../../images/lkykp.png"></image>
+        <text>电力标准</text>
+      </view>
+    </view>
+  </view>
+  <view class="workbench">
+    <text class="title">图书资料</text>
+    <view class="list">
+      <view class="items" data-url="https://e.tbs.com.cn/gtebook/ebook/home/home.cbs" bindtap='openUrl'>
+        <image src="../../images/gtgp.png"></image>
+        <text>国图电子书</text>
+      </view>
+      <view class="items" data-url="https://e.tbs.com.cn/qjm/web/home/home.cbs" bindtap='openUrl'>
+        <image src="../../images/dzts.png"></image>
+        <text>秋教目</text>
+      </view>
+    </view>
+  </view>
+  <view class="workbench">
+    <text class="title">档案管理</text>
+    <view class="list">
+      <view class="items" data-url="https://e.tbs.com.cn/goonie/web/home/home.cbs" bindtap='openUrl'>
+        <image src="../../images/jcsm.png"></image>
+        <text>多媒体档案</text>
+      </view>
+    </view>
+  </view>
+  <view class="workbench">
+    <text class="title">文献资料</text>
+    <view class="list">
+      <view class="items" data-url="https://e.tbs.com.cn/dms/web/home/home.cbs" bindtap='openUrl'>
+        <image src="../../images/wxjs.png"></image>
+        <text>文献检索</text>
+      </view>
+    </view>
+  </view>
+  <view class="workbench">
+    <text class="title">工具管理</text>
+    <view class="list">
+      <view class="items" bindtap="appstore">
+        <image src="../../images/appstore.png"></image>
+        <text>应用商店Beta</text>
+      </view>
+      <view class="items" bindtap="tbsstore">
+        <view class="weui-cell" style="padding:0;justify-content: center;">
+          <view class="weui-cell__hd" style="position: relative">
+            <image src="../../images/fcm.png" />
+            <view class="weui-badge" style="position: absolute;top: -.4em;right: -.4em;">开发中</view>
+          </view>
+        </view>
+        <text>文件内容管理</text>
+      </view>
+      <view class="items" bindtap="tbsstore">
+        <view class="weui-cell" style="padding:0;justify-content: center;">
+          <view class="weui-cell__hd" style="position: relative">
+            <image src="../../images/scada.png" />
+            <view class="weui-badge" style="position: absolute;top: -.4em;right: -.4em;">开发中</view>
+          </view>
+        </view>
+        <text>资源编辑管理</text>
+      </view>
+    </view>
+  </view> -->
+  <!-- <view class="workbench">
+    <text class="title">项目</text>
+    <view class="list">
+       <view class="items">
+        <image src="../../images/icon/qidai.png" class="service-icon"></image>
+        <text>添加中</text>
+      </view> 
+    </view>
+  </view> -->
+  <!-- <view class="scroll-txt">
+    <text class="scroll-ads"></text>
+  </view> -->
+</view>

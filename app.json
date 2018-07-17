@@ -1,0 +1,33 @@
+{
+  "pages": [
+    "pages/nindex/index",
+    "pages/nindex/index2",
+    "pages/index/index",
+    "pages/applist/applist",
+    "pages/detail/detail",
+    "pages/law/law",
+    "pages/law/list",
+    "pages/law/detail",
+    "pages/law/search",
+    "pages/outurl/detail",
+    "pages/outurl/website",
+    "pages/outurl/website1",
+    "pages/login/login",
+    "pages/login/mobile",
+    "pages/uploader/uploader",
+    "pages/uploader/picture",
+    "pages/uploader/video",
+    "pages/uploader/audio",
+    "pages/fcm/fcm",
+    "pages/fcm/fileList",
+    "pages/fcm/detail",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "金信桥软件",
+    "navigationBarTextStyle": "black"
+  }
+
+}

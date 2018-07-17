@@ -1,0 +1,40 @@
+<view class="page">
+  <!-- <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{errorText}}</view> -->
+  <view class="page__bd">
+    <view class="photo-add">
+      <view class="select-album" wx:if="{{albums.length > 0}}">
+        <view class="title">请选择一个路径</view>
+        <customerPicker dataList="{{albums}}" dataValue="{{albumIndex}}" columns="2" textLength="18" bind:pickConfrim="pickConfrim">
+        </customerPicker>
+
+      </view>
+    </view>
+    <view class="weui-cells">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view class="weui-uploader">
+            <view class="weui-uploader__hd">
+              <view class="weui-uploader__title">点击预览，长按可删除</view>
+              <view class="weui-uploader__info">{{files.length}}/9</view>
+            </view>
+            <view class="weui-uploader__bd">
+              <view class="weui-uploader__files" id="uploaderFiles">
+                <block wx:for="{{files}}" wx:key="*this">
+                  <view class="weui-uploader__file " data-index="{{index}}" catchlongpress="longTap" bindtap="previewImage" id="{{item}}">
+                    <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                  </view>
+                </block>
+              </view>
+              <view class="weui-uploader__input-box" wx:if="{{files.length < 9}}">
+                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="page__bd page__bd_spacing" style='margin:15.0px'>
+    <button class="weui-btn" type="primary" bindtap="uploadImage">上传</button>
+  </view>
+</view>

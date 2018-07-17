@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<view class="page">
+  <view class="weui-panel">
+  <view class="weui-panel__hd">应用分类列表</view>
+    <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_small-appmsg">
+        <view class="weui-cells weui-cells_in-small-appmsg">
+          <view class="weui-cell weui-cell_access" hover-class="weui-cell_active " bindtap='listclick'   wx:for="{{dirInfo}}" data-text="{{item.dirPath}}" wx:key="unique">
+            <view class="weui-cell__hd">
+              <image src="{{item.image}}" style="width: 30px;height: 30px;margin-right: 5px" />
+            </view>
+            <view class="weui-cell__bd weui-cell_primary">
+              <view>{{item.dirPath}}</view>
+            </view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

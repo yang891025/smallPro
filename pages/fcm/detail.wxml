@@ -1,0 +1,26 @@
+<!--pages/fcm/detail.wxml-->
+<view class="photo-add">
+  <view class="weui-cells" style='padding-top:20rpx;padding-bottom:20rpx' wx:if="{{fileType == 'ggaudio' || fileType == 'ypaudio'}}">
+    <view class="readingItem-content">
+      <view class="item-index">{{fileName}}</view>
+      <!-- 底部 控制区域 -->
+      <view class="read-audio-control">
+        <text class="date">音频大小:{{fileSize}}</text>
+        <!-- <image class="audio-listen" src="../../images/btn_read_listenS.png" bindtap="gotoPlay"></image> -->
+        <block wx:if="{{recording == true}}">
+          <image class="audio-listen" src="../../images/btn_read_record_stop.png" bindtap="stopPlay" id="record-{{index}}"></image>
+        </block>
+        <block wx:if="{{recording == false}}">
+          <image class="audio-listen" src="../../images/btn_read_listenS.png" bindtap="gotoPlay" id="record-{{index}}"></image>
+        </block>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="video-box" wx:if="{{fileType == 'ypvideo' || fileType == 'ggvideo'}}">
+    <view class="item-index">{{fileName}}</view>
+    <video class="video" src="{{filePath}}"></video>
+    <view style="text-align:center;color:green;font-size:14px;padding-top:7px;">当前视频大小为{{fileSize}}</view>
+  </view>
+</view>

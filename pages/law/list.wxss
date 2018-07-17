@@ -1,0 +1,78 @@
+/* pages/law/list.wxss */
+.table {
+  border: 0px solid darkgray;
+}
+.tr_c {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 2rem;
+  align-items: center;
+  
+}
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: left;
+  align-items: center;
+}
+
+.td {
+  width: 10%;
+  font-size: 14px;
+  justify-content: center;
+  text-align: center;
+}
+
+.td_c {
+  width: 90%;
+  font-size: 14px;
+  text-align: left;
+  color: #333;
+} 
+
+.bg-w {
+  background: snow;
+}
+
+.bg-g {
+  background: #e6f3f9;
+}
+
+.th {
+  width: 10%;
+  justify-content: center;
+  background: #36f;
+  color: #fff;
+  display: flex;
+  font-size: 16px;
+  height: 2rem;
+  align-items: center;
+}
+
+.th_c {
+  width: 90%;
+  /* justify-content: left; */
+  background: #36f;
+  font-size: 16px;
+  color: #fff;
+  display: flex;
+  height: 2rem;
+  align-items: center;
+  padding-left: 15px;
+}
+.searchbar-result{
+    margin-top: 0;
+    font-size: 14px;
+}
+.searchbar-result:before{
+    display: none;
+}
+.weui-cell{
+    padding: 12px 15px 12px 35px;
+}
+.checkbox-group {
+  font-size: 26rpx;
+  display: flex;
+  flex-direction: column;
+}

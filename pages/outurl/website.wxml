@@ -1,0 +1,2 @@
+<!--pages/outurl/website.wxml-->
+<web-view src="{{Path}}"> </web-view>

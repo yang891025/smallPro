@@ -1,0 +1,145 @@
+view, page {
+  padding: 0px;
+  margin: 1px;
+  z-index: 9999;
+}
+
+.page {
+  height: 100%;
+}
+
+.navbar {
+  display: flex;
+  position: absolute;
+  z-index: 500;
+  top: 0;
+  width: 100%;
+}
+
+.navbar__item {
+  position: relative;
+  display: block;
+  flex: 1;
+  padding: 10rpx 0;
+  text-align: center;
+  font-size: 0;
+  height: 48rpx;
+  line-height: 48rpx;
+}
+
+.navbar__item_on {
+  color: #18e;
+}
+
+.navbar__slider {
+  position: absolute;
+  display: block;
+  content: " ";
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  background-color: #18e;
+  transition: transform 0.3s;
+}
+
+.navbar__title {
+  display: inline-block;
+  font-size: 15px;
+  max-width: 8em;
+  text-align: center;
+}
+
+swiper {
+  height: 100%;
+}
+
+swiper-item {
+  width: 100%;
+  padding-top: 20rpx;
+  text-align: center;
+}
+
+.userinfo-avatar {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  margin-top: 40rpx;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+  display: block;
+  overflow: hidden;
+  margin-bottom: 120rpx;
+}
+
+.login-normal {
+  width: 90%;
+  padding: 0 15px 10px;
+}
+
+.model_last_oth {
+  padding: 10px 10px 0 10px;
+  font-size: 14px;
+}
+
+.model_last_btn {
+  padding: 10px 10px 0 10px;
+  font-size: 14px;
+}
+
+.model_last_btn button {
+  height: 36px;
+  background: #18e;
+  color: #fff;
+  font-size: 14px;
+  display: inline-block;
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.model_css {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.yanz_btn {
+  width: auto;
+  display: inline-block;
+  background: white;
+  margin-left: 6px;
+}
+
+.login-add .form-con {
+  padding-top: 41px;
+}
+
+.model_css label {
+  font-size: 16px;
+  margin-bottom: 5px;
+  line-height: 30px;
+  width: 100%;
+  text-align: left;
+}
+.model_css input {
+  display: block;
+  height: 40px;
+  width: 100%;
+  padding: 3px;
+  font-size: 14px;
+  line-height: 40px;
+  color: #919191;
+  background-color: #ffe;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  margin: 0;
+  text-indent: 5px;
+}

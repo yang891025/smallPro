@@ -1,0 +1,36 @@
+/* pages/uploader/video.wxss */
+
+.photo-add .select-album {
+    font-size:1em;
+    padding:.75em 0 0 0;
+}
+
+.photo-add .select-album .title {
+    padding-bottom:.25em;
+    padding-left:.75em;
+    color:#666;
+    font-size:.875em;
+}
+
+.photo-add .btn-box {
+    padding:1em 2em;
+}
+
+.photo-add .video-box {
+    margin-top:1em;
+    text-align:center;
+    width: 100%
+}
+
+.photo-add .add-video {
+    padding-top:1em;
+    text-align:center;
+}
+
+.picker {
+    font-size:1em;
+    padding:.75em;
+    background:#FFFFFF;
+    border-top:#eee solid 1px;
+    border-bottom:#eee solid 1px;
+}
