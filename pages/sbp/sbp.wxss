@@ -1,0 +1,16 @@
+/* pages/sbp/sbp.wxss */
+.track-bg {
+  background-color: #fff;
+  margin-top: 30rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  text-align: center;
+  border-radius:2px;
+  position: relative;
+}
+.page-text {
+ text-align: center;
+ font-size: 18px;
+ margin-top: 40rpx;
+ color: #1188ee;
+}

@@ -5,14 +5,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    Path: '',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+      that.setData({
+        Path: "https://e.tbs.com.cn/xls"
+      })
+    
   },
 
   /**
@@ -26,21 +30,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var app = getApp();
-    var that = this;
-    if (!app.globalData.webShowed) {
-    wx.navigateTo({
-      url: "/pages/outurl/website?path=1"
-    })
-    }else{
-      app.globalData.webShowed = false;//标记已经显示过web-view页了
-      wx.switchTab({
-        url: "/pages/index/index"
-      });  
-      // wx.reLaunch({
-      //   url: "/pages/index/index"
-      // });
-    }
+
   },
 
   /**

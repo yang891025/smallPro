@@ -1,0 +1,20 @@
+<!--pages/sbp/cloudList.wxml-->
+<view class="page">
+  <scroll-view class='main' scroll-y='true' style="height:{{windowHeight}}px" bindscrolltolower='loadMoreImages'>
+    <image wx:for='{{fileList}}' wx:key='item' src='{{item.src}}' style='position: absolute; top: {{item.top}}px; left: {{item.left}}px; width: {{imgWidth}}px; height: {{item.height}}px' bindload='loadImage' data-info="{{item}}" data-index='{{index}}' bindtap='showOcr' />
+  </scroll-view>
+  <!--view style='margin-bottom:65px;'>
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-grids" wx:if="{{fileList.length > 0}}">
+        <block wx:for="{{fileList}}" wx:key="*this">
+          <view url="" class="weui-grid_cloud" hover-class="weui-grid_active" data-info="{{item}}"                         bindtap='showOcr'>
+            <image class="weui-grid__img" src="{{item.url}}" />
+          </view>
+        </block>
+      </view>
+      <view class="scroll-txt" wx:else>
+        <text class="scroll-ads">文件列表为空</text>
+      </view>
+    </view>
+  </view-->
+</view>

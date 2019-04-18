@@ -18,6 +18,8 @@
     "pages/uploader/picture",
     "pages/uploader/video",
     "pages/uploader/audio",
+    "pages/sbp/sbp",
+    "pages/sbp/cloudList",
     "pages/fcm/fcm",
     "pages/fcm/fileList",
     "pages/fcm/detail",

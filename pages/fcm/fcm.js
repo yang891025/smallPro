@@ -50,10 +50,10 @@ Page({
       success: function (res) {
         wx.hideLoading();
         if ((parseInt(res.statusCode) == 200) && res.data.result) {
-        that.setData({
-          hasSuccess: true,
-          product: res.data.data
-        })
+          that.setData({
+            hasSuccess: true,
+            product: res.data.data
+          })
         }else{
           wx.reLaunch({
             url: '/pages/login/login',

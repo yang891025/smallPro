@@ -59,7 +59,7 @@ App({
                                 wx.setStorageSync("openid", res3.data.openid)
                                 wx.setStorageSync("account", res3.data.account)
                                 wx.setStorageSync("mobile", res3.data.mobile)
-                                if (res.data.mobile == "") {
+                                if (res3.data.mobile == "") {
                                   wx.reLaunch({
                                     url: '/pages/login/mobile',
                                   })
@@ -132,7 +132,7 @@ App({
                           wx.setStorageSync("openid", res3.data.openid)
                           wx.setStorageSync("account", res3.data.account)
                           wx.setStorageSync("mobile", res3.data.mobile)
-                          if (res.data.mobile == "") {
+                          if (res3.data.mobile == "") {
                             wx.reLaunch({
                               url: '/pages/login/mobile',
                             })

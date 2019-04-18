@@ -1,0 +1,14 @@
+<!--pages/sbp/sbp.wxml-->
+<view class="page">
+  
+  <view class="track-bg" bindtap="open">
+    <image src="/images/camer.png" style="width: 150px;height: 150px;margin: 15px"/>
+    <view class="page-text">选图识别</view>
+  </view>
+  <view class="weui-footer weui-footer_fixed-bottom">
+    <view class="weui-footer__links">
+      <navigator url="" class="weui-footer__link">京ICP备15047523号</navigator>
+    </view>
+    <view class="weui-footer__text">Copyright © 1994-2018 北京金信桥信息技术有限公司</view>
+  </view>
+</view>
