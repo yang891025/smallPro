@@ -1,0 +1,66 @@
+/* pages/vts/vts.wxss */
+.photo-add .btn-box {
+  padding: 1em 2em;
+}
+.speak-style {
+  position: fixed;
+  height: 240rpx;
+  width: 40%;
+  border-radius: 20rpx;
+  bottom: 40%;
+  left: 30%;
+  background: #26a5ff;
+}
+.record-style {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 120rpx;
+  width: 100%;
+}
+.btn-style {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+.sound-style {
+  position: absolute;
+  width: 30%;
+  height: 150rpx;
+  margin-top: 45rpx;
+  margin-left: 35%;
+}
+
+.name {
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  color: #696969;
+  font-size: large;
+}
+
+.time {
+  margin-left: 20rpx;
+  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+  color: #a9a9a9;
+  font-size: small;
+}
+
+.box {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.divLine {
+  background: #f1f1f1;
+  width: 100%;
+  height: 1rpx;
+}
+.out_box {
+  display: flex;
+  width: auto;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
