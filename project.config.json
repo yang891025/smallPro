@@ -12,6 +12,8 @@
 	"appid": "wxfb206c9f5d6af29f",
 	"projectname": "AppStore",
 	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,

@@ -19,6 +19,7 @@
     "pages/uploader/video",
     "pages/uploader/audio",
     "pages/sbp/sbp",
+    "pages/vts/vts",
     "pages/sbp/cloudList",
     "pages/fcm/fcm",
     "pages/fcm/fileList",
@@ -30,6 +31,6 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "金信桥软件",
     "navigationBarTextStyle": "black"
-  }
-
+  },
+  "sitemapLocation": "sitemap.json"
 }

@@ -305,7 +305,7 @@ Page({
     path = path.substring(path.indexOf("/"));
     wx.navigateTo({
       //url: '/pages/detail/detail?path=' + category
-      url: "/pages/outurl/website?path=" + encodeURIComponent("http://e.tbs.com.cn:8091" + path)
+      url: "/pages/outurl/website?path=" + encodeURIComponent("http://e.tbs.com.cn:8090" + path)
     })
   },
   /**

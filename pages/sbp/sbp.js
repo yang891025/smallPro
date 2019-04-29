@@ -24,7 +24,7 @@ Page({
   getFilePath: function () {
     var that = this;
     wx.showLoading({
-      title: '正在个人配置信息...',
+      title: '配置个人信息...',
     })
     wx.request({
       url: app.globalData.api + "/pts/tool.cbs",

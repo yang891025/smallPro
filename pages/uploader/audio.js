@@ -438,7 +438,7 @@ Page({
     }
     var files = this.data.voiceIndex;
     this.uploadaudio({
-      url: 'https://e.tbs.com.cn/cgi-bin/upload.fcgi?method=wxupload', //这里是你音频上传的接口
+      url: app.globalData.api +'/cgi-bin/upload.fcgi?method=wxupload', //这里是你音频上传的接口
       path: files //这里是选取的音频的地址数组
     });
   },
